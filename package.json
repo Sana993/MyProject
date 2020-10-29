@@ -1,0 +1,42 @@
+{
+  "name": "phototape",
+  "version": "1.0.0",
+  "description": "Приложение для просмотра фотографий",
+  "main": "index.js",
+  "dependencies": {
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "unsplash-js": "^6.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^4.5.0",
+    "react": "^17.0.1",
+    "webpack": "^5.3.1",
+    "webpack-cli": "^4.1.0"
+  },
+  "scripts": {
+    "dev": "webpack --mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sana993/MyProject.git"
+  },
+  "keywords": [
+    "JS",
+    "React",
+    "Redux",
+    "Unsplash"
+  ],
+  "author": "Alex Barhotkin <shura.barhotkin@yandex.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sana993/MyProject/issues"
+  },
+  "homepage": "https://github.com/Sana993/MyProject#readme"
+}
