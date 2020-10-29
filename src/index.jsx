@@ -5,6 +5,7 @@ import {createStore} from 'redux';
 
 import reducer from './redux/reducer.js';
 import App from './react/app.jsx'
+import './styles/style.css'
 
 const initialState = {
     test: 'test'
