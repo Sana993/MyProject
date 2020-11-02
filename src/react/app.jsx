@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/app.css';
+import styles from'../styles/app.css';
 
 import Header from './header.jsx'
 import SelectedPhoto from './selectedphoto.jsx';
@@ -9,7 +9,7 @@ import ListPhoto from './listphoto.jsx';
 
 function App () {
     return(
-        <div className='app'>
+        <div className={styles.app}>
             <Header />
             <SelectedPhoto />
             <ListPhoto />

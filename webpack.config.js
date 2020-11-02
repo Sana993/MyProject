@@ -34,8 +34,26 @@ module.exports = {
            },
            {
                test: /\.css$/,
-               use: [MiniCssExtractPlugin.loader, 'css-loader']
-
+               use: [
+                   {
+                       loader: MiniCssExtractPlugin.loader,
+                       options: {
+                           publicPath: '',
+                       }
+                   },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                localIdentName: '[name]__[local]',
+                            },
+                        }
+                    },
+                ],
+           },
+           {
+               test: /\.(png|gif|jpg|svg)$/,
+               use: ['file-loader'],
            },
         ],
     },
@@ -45,6 +63,8 @@ module.exports = {
             template: './src/index.html',
         }),
         new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({
+            filename: '[name]_build.css',
+        }),
     ],
 }

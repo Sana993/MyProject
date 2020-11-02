@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
+import styles from '../styles/header.css';
 
 function Header () {
 
     return (
         <div className='header'>
-            Header here!
+            <h2 className={styles.test}>PhotoTape</h2>
         </div>
     )
 }
