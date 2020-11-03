@@ -90,6 +90,30 @@
 .selectedphoto__authorName {
 
 }
+.listphoto__listPhoto{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.listphoto__listItem{
+    display: block;
+    min-width: 150px;
+    min-height: 200px;
+    max-width: 200px;
+    max-height: 250px;
+}
+.listphoto__author{
+    height: 50px;;
+    width: 100%;
+    display: flex;
+}
+.listphoto__authorFace {
+    width: 20px;
+    height: 20px;
+}
+.listphoto__authorName {
+
+}
 html {
     box-sizing: border-box;
 }
@@ -109,4 +133,10 @@ body {
     letter-spacing: -.03em;
 
     background-color: #f9f9f9;
+}
+ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
 }

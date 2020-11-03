@@ -94,7 +94,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\n\nfunction ListPhoto() {\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n    className: \"list-photo\"\n  }, \"List photo here!\");\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ListPhoto);\n\n//# sourceURL=webpack://phototape/./src/react/listphoto.jsx?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n/* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! redux */ \"./node_modules/redux/es/redux.js\");\n/* harmony import */ var _redux_actioncreators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../redux/actioncreators */ \"./src/redux/actioncreators.js\");\n/* harmony import */ var _styles_listphoto_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../styles/listphoto.css */ \"./src/styles/listphoto.css\");\n\n\n\n\n\n\nfunction ListPhoto(_ref) {\n  var listPhoto = _ref.listPhoto,\n      selectPhoto = _ref.selectPhoto;\n  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"ul\", {\n    className: _styles_listphoto_css__WEBPACK_IMPORTED_MODULE_3__.default.listPhoto\n  }, listPhoto.map(function (item) {\n    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"li\", {\n      className: _styles_listphoto_css__WEBPACK_IMPORTED_MODULE_3__.default.listItem,\n      id: item.id\n    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n      onClick: function onClick() {\n        selectPhoto(item.id);\n      }\n    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"img\", {\n      src: item.urls.small,\n      alt: item.alt_description,\n      style: {\n        maxWidth: '100%',\n        maxHeight: '100%'\n      }\n    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n      className: _styles_listphoto_css__WEBPACK_IMPORTED_MODULE_3__.default.author\n    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n      className: _styles_listphoto_css__WEBPACK_IMPORTED_MODULE_3__.default.authorFace,\n      style: {\n        backgroundImage: \"url(\".concat(item.user.profile_image.small, \")\"),\n        backgroundSize: 'cover',\n        backgroundRepeat: 'no-repeat'\n      }\n    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(\"div\", {\n      className: _styles_listphoto_css__WEBPACK_IMPORTED_MODULE_3__.default.authorName\n    }, \"\".concat(item.user.first_name, \" \").concat(item.user.last_name)))));\n  }));\n}\n\nfunction mapStateToProps(state) {\n  return {\n    listPhoto: state.listPhoto\n  };\n}\n\nfunction mapDispatchToProps(dispatch) {\n  return {\n    selectPhoto: (0,redux__WEBPACK_IMPORTED_MODULE_4__.bindActionCreators)(_redux_actioncreators__WEBPACK_IMPORTED_MODULE_2__.selectPhoto, dispatch)\n  };\n}\n\nListPhoto = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.connect)(mapStateToProps, mapDispatchToProps)(ListPhoto);\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ListPhoto);\n\n//# sourceURL=webpack://phototape/./src/react/listphoto.jsx?");
 
 /***/ }),
 
@@ -227,6 +227,21 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n// extracted by mini-css-extract-plugin\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\"test\":\"header__test\"});\n\n//# sourceURL=webpack://phototape/./src/styles/header.css?");
+
+/***/ }),
+
+/***/ "./src/styles/listphoto.css":
+/*!**********************************!*\
+  !*** ./src/styles/listphoto.css ***!
+  \**********************************/
+/*! namespace exports */
+/*! export default [provided] [no usage info] [missing usage info prevents renaming] */
+/*! other exports [not provided] [no usage info] */
+/*! runtime requirements: __webpack_exports__, __webpack_require__.r, __webpack_require__.d, __webpack_require__.* */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => __WEBPACK_DEFAULT_EXPORT__\n/* harmony export */ });\n// extracted by mini-css-extract-plugin\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({\"listPhoto\":\"listphoto__listPhoto\",\"listItem\":\"listphoto__listItem\",\"author\":\"listphoto__author\",\"authorFace\":\"listphoto__authorFace\",\"authorName\":\"listphoto__authorName\"});\n\n//# sourceURL=webpack://phototape/./src/styles/listphoto.css?");
 
 /***/ }),
 
