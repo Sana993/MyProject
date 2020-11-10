@@ -20,4 +20,17 @@ function selectPhoto (id) {
     }
 }
 
-export { nextPhoto, previousPhoto, selectPhoto }
+function clickStamp () {
+    return {
+        type: 'CLICK_STAMP',
+    }
+}
+
+function hoverBack (hover) {
+    return {
+        type: 'HOVER_BACK',
+        hover: hover,
+    }
+}
+
+export { nextPhoto, previousPhoto, selectPhoto, clickStamp, hoverBack }

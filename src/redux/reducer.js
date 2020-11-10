@@ -16,6 +16,23 @@ function reducer (state, action) {
                     selectedPhoto: state.listPhoto[num1+1],
                 }
             }
+        case 'CLICK_STAMP':
+            return {
+                ...state,
+                showBackCard: {
+                    hover: state.showBackCard.hover,
+                    click:  !state.showBackCard.click,
+                },
+            }
+
+        case 'HOVER_BACK':
+            return {
+                ...state,
+                showBackCard: {
+                    hover: action.hover,
+                    click:  state.showBackCard.click,
+                },
+            }
 
         case 'PREVIOUS_PHOTO':
             let num2

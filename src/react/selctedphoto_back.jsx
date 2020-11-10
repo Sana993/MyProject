@@ -1,22 +1,30 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import { nextPhoto, previousPhoto } from '../redux/actioncreators';
+import { clickStamp, hoverBack } from '../redux/actioncreators';
 import styles from '../styles/selectedphoto.css';
 
-function SelectedPhotoBack ({photo, size}) {
+function SelectedPhotoBack ({showBack, photo, size, clickStamp, hoverBack}) {
+    let zPos = (showBack.hover || showBack.click)? 15: 5;
+    console.log(zPos);
     return (
         <div 
             className={styles.back}
             style={{
                 ...size,
-                 right: `${400-Number(size.width.slice(0, -2))/2}px`,
-                top: `${450-Number(size.height.slice(0, -2))/2}px`
+                right: `${450-Number(size.width.slice(0, -2))/2}px`,
+                top: `${430-Number(size.height.slice(0, -2))/2}px`,
+                zIndex: `${zPos}`,
             }}
+            onMouseEnter={()=>{hoverBack(true)}}
+            onMouseLeave={()=>{hoverBack(false)}}
          >
             <div className={styles.backTop}>
                 <div className={styles.tags}></div>
-                <div className={styles.stamp}></div>
+                <div 
+                    className={styles.stamp}
+                    onClick={()=>{clickStamp()}}
+                ></div>
              </div>
             <div className={styles.backDown}>
                 <div className={styles.location}></div>
@@ -24,7 +32,7 @@ function SelectedPhotoBack ({photo, size}) {
                     <div 
                         className={styles.authorFace}
                         style={{
-                            backgroundImage: `url(${photo.user.profile_image.small})`,
+                            backgroundImage: `url(${photo.user.profile_image.medium})`,
                             backgroundSize: 'cover',
                             backgroundRepeat: 'no-repeat',
                         }}
@@ -39,13 +47,14 @@ function SelectedPhotoBack ({photo, size}) {
 function mapStateToProps (state) {
     return {
         photo: state.selectedPhoto,
+        showBack: state.showBackCard, 
     }
 }
 
 function mapDispatchToProps (dispatch) {
     return {
-        nextPhoto: bindActionCreators(nextPhoto, dispatch),
-        previousPhoto: bindActionCreators(previousPhoto, dispatch),
+        clickStamp: bindActionCreators(clickStamp, dispatch),
+        hoverBack: bindActionCreators(hoverBack, dispatch)
     }
 }
 

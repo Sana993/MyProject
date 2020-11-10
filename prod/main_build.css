@@ -17,6 +17,7 @@
     z-index: 1;
     overflow: hidden;
     justify-content: space-evenly;
+    margin-bottom: 20px;
 }
 .selectedphoto__arrow {
     width: 50px;
@@ -43,6 +44,7 @@
 .selectedphoto__face {
     background-size: cover;
     z-index: 10;
+    margin-right: 100px;
 }
 .selectedphoto__back {
     background-color: #fcfaf0;
@@ -80,12 +82,14 @@
 }
 
 .selectedphoto__author {
-    height: 100px;
+    height: 80px;
     display: flex;
+    align-items: center;
 }
 .selectedphoto__authorFace {
-    width: 100px;
-    height: 100px;
+    margin: 15px;
+    width: 50px;
+    height: 50px;
 }
 .selectedphoto__authorName {
 
@@ -102,13 +106,15 @@
     
 }
 .listphoto__photo{
-    height: 160px;
-    width: 200px;
+    height: 140px;
+    width: 180px;
+
 }
 .listphoto__author{
     height: 40px;;
     width: 100%;
     display: flex;
+    justify-content: space-around;
 }
 .listphoto__authorFace {
     width: 20px;
@@ -142,4 +148,7 @@ ul {
     padding: 0;
 
     list-style: none;
+}
+li {
+    margin: 0;
 }

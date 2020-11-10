@@ -8,10 +8,10 @@ function ListPhotoItem ({item, styles, selectPhoto}) {
         <li 
             className={styles.listItem}
             id={item.id}
-            onClick={()=>selectPhoto(item.id)}
         >
             <div 
                 className={styles.photo}
+                onClick={()=>selectPhoto(item.id)}
                 style={{
                     backgroundImage: `url(${item.urls.small})`,
                     backgroundSize: 'contain',
@@ -20,7 +20,6 @@ function ListPhotoItem ({item, styles, selectPhoto}) {
                     backgroundRepeat: 'no-repeat',
                 }}
             >
-
             </div>
             <div className={styles.author}>
                 <div
