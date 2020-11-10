@@ -5,10 +5,15 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
     mode: 'development',
+    devtool: 'eval',
+    watch: true,
     entry: './src/index.jsx',
     output: {
         filename: '[name]_build.js',
         path: path.resolve(__dirname, 'prod')
+    },
+    devServer: {
+        index: 'index_build.html'
     },
     module: {
         rules: [

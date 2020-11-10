@@ -19,7 +19,7 @@ unsplash.photos.listPhotos(2, 10, "latest")
 
         list.push(json[item])
     }
-    console.log(list[3]);
+    console.log(list[0]);
     let initialState = {
         selectedPhoto: list[0],
         listPhoto: list,

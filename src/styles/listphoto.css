@@ -1,0 +1,27 @@
+:local(.listPhoto){
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+:local(.listItem){
+    display: block;
+    width: 200px;
+    height: 200px;
+    
+}
+:local(.photo){
+    height: 160px;
+    width: 200px;
+}
+:local(.author){
+    height: 40px;;
+    width: 100%;
+    display: flex;
+}
+:local(.authorFace) {
+    width: 20px;
+    height: 20px;
+}
+:local(.authorName) {
+
+}
