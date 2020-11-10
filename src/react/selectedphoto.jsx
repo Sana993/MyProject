@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import { nextPhoto, previousPhoto } from '../redux/actioncreators';
 import styles from '../styles/selectedphoto.css';
-import SelectedPhotoBack from './selctedphoto_back.jsx'
+import SelectedPhotoBack from './selctedphoto_back.jsx';
 
 let SelectedPhoto = function ({photo, nextPhoto, previousPhoto, }) {
     let size;
@@ -15,7 +15,7 @@ let SelectedPhoto = function ({photo, nextPhoto, previousPhoto, }) {
     } else {
         size = {
             width: '700px',
-            height: `${photo.height*(500/photo.width)}px`,
+            height: `${photo.height*(700/photo.width)}px`,
         }
     }
     

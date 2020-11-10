@@ -5,13 +5,16 @@
 }
 :local(.listItem){
     display: block;
-    min-width: 150px;
-    min-height: 200px;
-    max-width: 200px;
-    max-height: 250px;
+    width: 200px;
+    height: 200px;
+    
+}
+:local(.photo){
+    height: 160px;
+    width: 200px;
 }
 :local(.author){
-    height: 50px;;
+    height: 40px;;
     width: 100%;
     display: flex;
 }
