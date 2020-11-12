@@ -106,9 +106,14 @@
     
 }
 .listphoto__photo{
-    height: 140px;
     width: 180px;
-
+    height: 140px;
+    display: flex;
+    justify-content: center;
+}
+.listphoto__img {
+    max-width: 180px;
+    max-height: 140px;
 }
 .listphoto__author{
     height: 40px;;
@@ -122,6 +127,15 @@
 }
 .listphoto__authorName {
 
+}
+
+
+.authentification__container {
+
+}
+
+.authentification__button {
+    
 }
 html {
     box-sizing: border-box;

@@ -33,4 +33,9 @@ function hoverBack (hover) {
     }
 }
 
-export { nextPhoto, previousPhoto, selectPhoto, clickStamp, hoverBack }
+function downloadMore () {
+    return {
+        type: 'DOWNLOAD_MORE'
+    }
+}
+export { nextPhoto, previousPhoto, selectPhoto, clickStamp, hoverBack, downloadMore }

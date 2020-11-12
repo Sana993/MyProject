@@ -8,18 +8,22 @@ import ListPhotoItem from './listphotoitem.jsx';
 function ListPhoto ({listPhoto, selectPhoto}) {
 
     return (
-        <ul className={styles.listPhoto}>
-            {listPhoto.map((item)=>{
-                return(
-                    <ListPhotoItem 
-                        item={item}
-                        styles={styles}
-                        key={item.id}
-                        selectPhoto={selectPhoto}
-                    />
-                )
-            })}
-        </ul>
+        <div>
+             <ul className={styles.listPhoto}>
+                {listPhoto.map((item)=>{
+                    return(
+                        <ListPhotoItem 
+                            item={item}
+                            styles={styles}
+                            key={item.id}
+                            selectPhoto={selectPhoto}
+                        />
+                    )
+                })}
+            </ul>
+            <button className={styles.buttonDownload}>Загрузить больше фотографий</button>
+        </div>
+       
     )
 }
 

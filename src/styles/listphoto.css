@@ -10,9 +10,14 @@
     
 }
 :local(.photo){
-    height: 140px;
     width: 180px;
-
+    height: 140px;
+    display: flex;
+    justify-content: center;
+}
+:local(.img) {
+    max-width: 180px;
+    max-height: 140px;
 }
 :local(.author){
     height: 40px;;

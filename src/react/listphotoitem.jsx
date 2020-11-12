@@ -12,14 +12,11 @@ function ListPhotoItem ({item, styles, selectPhoto}) {
             <div 
                 className={styles.photo}
                 onClick={()=>selectPhoto(item.id)}
-                style={{
-                    backgroundImage: `url(${item.urls.small})`,
-                    backgroundSize: 'contain',
-                    backgroundPositionX: 'center',
-                    backgroundPositionY: 'center',
-                    backgroundRepeat: 'no-repeat',
-                }}
             >
+                <img 
+                    className={styles.img} 
+                    src={item.urls.small} 
+                    alt=""/>
             </div>
             <div className={styles.author}>
                 <div

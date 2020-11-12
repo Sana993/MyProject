@@ -5,13 +5,13 @@ import {createStore} from 'redux';
 import Unsplash, {toJson} from 'unsplash-js'
 
 import reducer from './redux/reducer.js';
-import App from './react/app.jsx';
+import Home from './react/app.jsx';
 import './styles/style.css';
 
 const unsplash = new Unsplash({accessKey: 'W5oq3JGZopEHoTqc5GPgMrCK4egVDFSn7nV5xhuWIzk'})
 
 
-unsplash.photos.listPhotos(2, 10, "latest")
+unsplash.photos.listPhotos(1, 10, "latest")
   .then(toJson)
   .then(json => {
     let list = [];
@@ -33,7 +33,7 @@ unsplash.photos.listPhotos(2, 10, "latest")
 
     ReactDOM.render(
         <Provider store={store}>
-            <App />
+            <Home />
         </Provider>,
         document.querySelector('#appcontainer')
     )
