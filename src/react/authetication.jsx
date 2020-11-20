@@ -6,16 +6,14 @@ import {
 
 import styles from '../styles/authentification.css'
 
-function Authentification () {
+function Authentication () {
 
     return (
-        // <Router>
-            <div className={styles.container}>
-                <button className={styles.button}>LogIn with Unsplash.com</button>
-                <Link to='/'>Back</Link>
-            </div>
-        // </Router>
+        <div className={styles.container}>
+            <button className={styles.button}>back</button>
+            <Link to='/'>Back</Link>
+        </div>
     )
 }
 
-export default Authentification
+export default Authentication

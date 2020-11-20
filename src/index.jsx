@@ -14,15 +14,10 @@ const unsplash = new Unsplash({accessKey: 'W5oq3JGZopEHoTqc5GPgMrCK4egVDFSn7nV5x
 unsplash.photos.listPhotos(1, 10, "latest")
   .then(toJson)
   .then(json => {
-    let list = [];
-    for (let item in json) {
-
-        list.push(json[item])
-    }
-    console.log(list[0]);
     let initialState = {
-        selectedPhoto: list[0],
-        listPhoto: list,
+        selectedPhoto: json[0],
+        listPhoto: json,
+        pageNumber: 1,
         showBackCard: {
             hover: false,
             click: false

@@ -18,14 +18,12 @@ function Header () {
 function RouteHeader () {
 
     return (
-        // <Router>
-            <div>
-                <div className='header'>
-                    <h2 className={styles.test}>PhotoTape</h2>
-                    <Link to='/auth'>Authentification</Link>
-                </div>
+        <div>
+            <div className='header'>
+                <h2 className={styles.test}>PhotoTape</h2>
+                <button>LogIn with Unsplash.com</button>  
             </div>
-        // </Router>
+        </div>
     )
 }
 export default RouteHeader;

@@ -13,7 +13,8 @@ module.exports = {
         path: path.resolve(__dirname, 'prod')
     },
     devServer: {
-        index: 'index_build.html'
+        index: 'index_build.html',
+        historyApiFallback: true,
     },
     module: {
         rules: [

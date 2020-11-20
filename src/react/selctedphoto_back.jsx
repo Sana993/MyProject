@@ -6,7 +6,6 @@ import styles from '../styles/selectedphoto.css';
 
 function SelectedPhotoBack ({showBack, photo, size, clickStamp, hoverBack}) {
     let zPos = (showBack.hover || showBack.click)? 15: 5;
-    console.log(zPos);
     return (
         <div 
             className={styles.back}

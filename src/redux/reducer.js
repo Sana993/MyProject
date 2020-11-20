@@ -1,3 +1,4 @@
+
 function reducer (state, action) {
     switch (action.type) {
 
@@ -61,6 +62,14 @@ function reducer (state, action) {
                  ...state,
                  selectedPhoto: state.listPhoto[num3],
             }
+
+        case 'DOWNLOAD_MORE':
+            return {
+                ...state,
+                listPhoto: state.listPhoto.concat(action.list),
+                pageNumber: state.pageNumber+2,
+            }
+        
         default: return state;
     }
 }

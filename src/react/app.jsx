@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Switch,
     Route
 } from 'react-router-dom'
@@ -9,7 +9,7 @@ import styles from'../styles/app.css';
 import Header from './header.jsx'
 import SelectedPhoto from './selectedphoto.jsx';
 import ListPhoto from './listphoto.jsx';
-import Authentification from './authetication.jsx';
+import Authentication from './authetication.jsx';
 
 
 
@@ -25,7 +25,7 @@ function Home () {
                     </div>
                 </Route>
                 <Route path='/auth'>
-                    <Authentification />
+                    <Authentication />
                 </Route>
             </Switch>
         </Router>
