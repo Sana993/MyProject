@@ -14,6 +14,11 @@ const unsplash = new Unsplash({
     callbackUrl: 'http://localhost:8080/auth',
 })
 
+if (localStorage.getItem('accessToken')) {
+    if ('токен не тухлый') {
+        unsplash.auth.setBearerToken(localStorage.getItem('accessToken'))
+    }
+}
 
 unsplash.photos.listPhotos(1, 10, "popular")
   .then(toJson)

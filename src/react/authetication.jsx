@@ -18,12 +18,13 @@ function Authentication ({unsplash, setUnsplash}) {
 
     const code = location.search.split('code=')[1]
 
-    if (code && (unsplash._bearerToken === undefined)) {
+    if (code) {
 
         newUnsplash.auth.userAuthentication(code)
             .then(res=>res.json())
             .then(json=>{
                 newUnsplash.auth.setBearerToken(json.access_token)
+                localStorage.setItem('accessToken', json.access_token)
                 console.log(newUnsplash);
                 setUnsplash(newUnsplash)
             })
