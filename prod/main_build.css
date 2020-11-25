@@ -16,7 +16,7 @@
     background: linear-gradient(45deg, #784825, #bf7a49);
     z-index: 1;
     overflow: hidden;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 .selectedphoto__arrow {
@@ -36,9 +36,11 @@
 
 }
 .selectedphoto__left {
+    margin-left: 30px;
     transform: rotate(180deg);
 }
 .selectedphoto__right {
+    margin-right: 30px;
     transform: rotate(0deg);
 }
 .selectedphoto__face {
@@ -79,8 +81,16 @@
 }
 .selectedphoto__location {
     min-height: 50px;
+    
 }
 
+.selectedphoto__authorAndLikes {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 .selectedphoto__author {
     height: 80px;
     display: flex;
@@ -93,6 +103,17 @@
 }
 .selectedphoto__authorName {
 
+}
+.selectedphoto__likes {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 60px;
+    background-image: url(904f6e9a7801dd7ce1c62aaed552aa7a.svg);
+    background-size: 110%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .listphoto__listPhoto{
     display: flex;

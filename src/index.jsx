@@ -8,16 +8,21 @@ import reducer from './redux/reducer.js';
 import Home from './react/app.jsx';
 import './styles/style.css';
 
-const unsplash = new Unsplash({accessKey: 'W5oq3JGZopEHoTqc5GPgMrCK4egVDFSn7nV5xhuWIzk'})
+const unsplash = new Unsplash({
+    accessKey: 'W5oq3JGZopEHoTqc5GPgMrCK4egVDFSn7nV5xhuWIzk',
+    secret: 'eL4dsy5AyDJKEg55gJEgx6OGidJjHCjjEVZ3-bPgn-Q',
+    callbackUrl: 'http://localhost:8080/auth',
+})
 
 
-unsplash.photos.listPhotos(1, 10, "latest")
+unsplash.photos.listPhotos(1, 10, "popular")
   .then(toJson)
   .then(json => {
     let initialState = {
-        selectedPhoto: json[0],
+        unsplash: unsplash,
+        selectedPhoto: 0,
         listPhoto: json,
-        pageNumber: 1,
+        photoNumber: 10,
         showBackCard: {
             hover: false,
             click: false
@@ -25,7 +30,7 @@ unsplash.photos.listPhotos(1, 10, "latest")
     }
 
     const store = createStore(reducer, initialState)
-
+   
     ReactDOM.render(
         <Provider store={store}>
             <Home />

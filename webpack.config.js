@@ -10,11 +10,16 @@ module.exports = {
     entry: './src/index.jsx',
     output: {
         filename: '[name]_build.js',
-        path: path.resolve(__dirname, 'prod')
+        path: path.resolve(__dirname, 'prod'),
+        publicPath: '/'
     },
     devServer: {
         index: 'index_build.html',
-        historyApiFallback: true,
+        historyApiFallback: {
+            rewrites: [
+                {from: '/auth', to: '/'}
+            ]
+        }
     },
     module: {
         rules: [

@@ -8,7 +8,7 @@
     background: linear-gradient(45deg, #784825, #bf7a49);
     z-index: 1;
     overflow: hidden;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 :local(.arrow) {
@@ -29,10 +29,12 @@
 }
 :local(.left) {
     composes: arrow;
+    margin-left: 30px;
     transform: rotate(180deg);
 }
 :local(.right) {
     composes: arrow;
+    margin-right: 30px;
     transform: rotate(0deg);
 }
 :local(.face) {
@@ -75,8 +77,16 @@
 }
 :local(.location) {
     min-height: 50px;
+    
 }
 
+:local(.authorAndLikes) {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 :local(.author) {
     height: 80px;
     display: flex;
@@ -89,4 +99,15 @@
 }
 :local(.authorName) {
 
+}
+:local(.likes) {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 60px;
+    background-image: url('../img/heartlike.svg');
+    background-size: 110%;
+    background-position: center;
+    background-repeat: no-repeat;
 }

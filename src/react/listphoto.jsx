@@ -4,17 +4,16 @@ import { bindActionCreators } from 'redux';
 import { selectPhoto, downloadMore } from '../redux/actioncreators';
 import styles from '../styles/listphoto.css';
 import ListPhotoItem from './listphotoitem.jsx';
-import Unsplash, {toJson} from 'unsplash-js'
+import {toJson} from 'unsplash-js'
 
-function ListPhoto ({listPhoto, pageNumber, selectPhoto, downloadMore}) {
+function ListPhoto ({unsplash, listPhoto, photoNumber, selectPhoto, downloadMore}) {
 
     function downloadPhoto () {
-        const unsplash = new Unsplash({accessKey: 'W5oq3JGZopEHoTqc5GPgMrCK4egVDFSn7nV5xhuWIzk'});
-            unsplash.photos.listPhotos(pageNumber+2, 10, "latest")
-                .then(toJson)
-                .then(json => {
-                    downloadMore(json)
-                })
+        unsplash.photos.listPhotos(1, photoNumber+10, "popular")
+            .then(toJson)
+            .then(json => {
+                downloadMore(json)
+            })
     }
 
     return (
@@ -42,8 +41,9 @@ function ListPhoto ({listPhoto, pageNumber, selectPhoto, downloadMore}) {
 
 function mapStateToProps (state) {
     return {
+        photoNumber: state.photoNumber,
+        unsplash: state.unsplash,
         listPhoto: state.listPhoto,
-        pageNumber: state.pageNumber,
     }
 }
 

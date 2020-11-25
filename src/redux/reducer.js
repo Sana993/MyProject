@@ -14,7 +14,7 @@ function reducer (state, action) {
             } else {
                 return {
                     ...state,
-                    selectedPhoto: state.listPhoto[num1+1],
+                    selectedPhoto: num1+1,
                 }
             }
         case 'CLICK_STAMP':
@@ -47,7 +47,7 @@ function reducer (state, action) {
             } else {
                 return {
                     ...state,
-                    selectedPhoto: state.listPhoto[num2-1],
+                    selectedPhoto: num2-1,
                 }
             }
 
@@ -60,16 +60,45 @@ function reducer (state, action) {
             }
             return {
                  ...state,
-                 selectedPhoto: state.listPhoto[num3],
+                 selectedPhoto: num3,
             }
 
         case 'DOWNLOAD_MORE':
             return {
                 ...state,
-                listPhoto: state.listPhoto.concat(action.list),
-                pageNumber: state.pageNumber+2,
+                listPhoto: action.list,
+                photoNumber: state.photoNumber+10,
             }
-        
+            
+        case 'SET_UNSPLASH':
+            return {
+                ...state,
+                unsplash: action.unsplash
+            }
+
+        case 'CLICK_LIKE':
+            return {
+                ...state,
+            }
+
+        case 'SET_PHOTO':
+            let list = state.listPhoto.map((item, index)=>{
+                if (index==state.selectedPhoto) {
+                    console.log(`совпал ${index}`);
+                    let newItem = item;
+                    newItem.liked_by_user = action.photo.liked_by_user;
+                    return newItem
+                } else {
+                    return item
+                }
+            })
+            console.log(state.listPhoto);
+            console.log(list);
+            return {
+                ...state,
+                listPhoto: list
+            }
+
         default: return state;
     }
 }

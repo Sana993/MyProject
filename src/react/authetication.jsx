@@ -1,12 +1,33 @@
 import React from 'react';
-import {
-    BrowserRouter as Router,
-    Link
-} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import { bindActionCreators } from 'redux';
+import {connect} from 'react-redux';
+import Unsplash from 'unsplash-js';
 
 import styles from '../styles/authentification.css'
+import { setUnsplash } from '../redux/actioncreators.js'
 
-function Authentication () {
+const newUnsplash = new Unsplash ({
+    accessKey: 'W5oq3JGZopEHoTqc5GPgMrCK4egVDFSn7nV5xhuWIzk',
+    secret: 'eL4dsy5AyDJKEg55gJEgx6OGidJjHCjjEVZ3-bPgn-Q',
+    callbackUrl: 'http://localhost:8080/auth',
+})
+
+
+function Authentication ({unsplash, setUnsplash}) {
+
+    const code = location.search.split('code=')[1]
+
+    if (code && (unsplash._bearerToken === undefined)) {
+
+        newUnsplash.auth.userAuthentication(code)
+            .then(res=>res.json())
+            .then(json=>{
+                newUnsplash.auth.setBearerToken(json.access_token)
+                console.log(newUnsplash);
+                setUnsplash(newUnsplash)
+            })
+    }
 
     return (
         <div className={styles.container}>
@@ -15,5 +36,22 @@ function Authentication () {
         </div>
     )
 }
+
+function mapStateToProps (state) {
+    return {
+        unsplash: state.unsplash,
+    }
+}
+
+function mapDispatchToProps (dispatch) {
+    return {
+        setUnsplash: bindActionCreators(setUnsplash, dispatch)
+    }
+}
+
+Authentication = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Authentication)
 
 export default Authentication

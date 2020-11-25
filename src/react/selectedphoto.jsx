@@ -5,7 +5,9 @@ import { nextPhoto, previousPhoto } from '../redux/actioncreators';
 import styles from '../styles/selectedphoto.css';
 import SelectedPhotoBack from './selctedphoto_back.jsx';
 
-let SelectedPhoto = function ({photo, nextPhoto, previousPhoto, }) {
+let SelectedPhoto = function ({numPhoto, listPhoto, nextPhoto, previousPhoto, }) {
+    // console.log(listPhoto[numPhoto]);
+    let photo = listPhoto[numPhoto]
     let size;
     if (photo.height/photo.width > (5/7)) {
         size = {
@@ -18,7 +20,7 @@ let SelectedPhoto = function ({photo, nextPhoto, previousPhoto, }) {
             height: `${photo.height*(700/photo.width)}px`,
         }
     }
-    
+
     return (
         <div className={styles.container}>
             <div 
@@ -48,7 +50,8 @@ let SelectedPhoto = function ({photo, nextPhoto, previousPhoto, }) {
 
 function mapStateToProps (state) {
     return {
-        photo: state.selectedPhoto,
+        numPhoto: state.selectedPhoto,
+        listPhoto: state.listPhoto
     }
 }
 

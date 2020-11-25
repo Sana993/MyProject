@@ -36,8 +36,27 @@ function hoverBack (hover) {
 function downloadMore (list) {
     return {
         type: 'DOWNLOAD_MORE',
-        list: list
+        list: list,
     }
 }
 
-export { nextPhoto, previousPhoto, selectPhoto, clickStamp, hoverBack, downloadMore }
+function clickLike () {
+    return {
+        type: 'CLICK_LIKE',
+    }
+}
+
+function setUnsplash (unsplash) {
+    return {
+        type: 'SET_UNSPLASH',
+        unsplash: unsplash,
+    }
+}
+function setPhoto (photo) {
+    return {
+        type: 'SET_PHOTO',
+        photo: photo,
+    }
+}
+
+export { nextPhoto, previousPhoto, selectPhoto, clickStamp, hoverBack, downloadMore, clickLike, setUnsplash, setPhoto }
