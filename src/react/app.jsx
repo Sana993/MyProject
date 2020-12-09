@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    BrowserRouter as Router,
+    StaticRouter as Router,
     Switch,
     Route
 } from 'react-router-dom'
