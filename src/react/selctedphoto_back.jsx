@@ -8,10 +8,10 @@ import styles from '../styles/selectedphoto.css';
 
 function SelectedPhotoBack ({unsplash, numPhoto, listPhoto, showBack, size, clickStamp, hoverBack, setPhoto}) {
     let photo = listPhoto[numPhoto]
-    console.log(photo);
+    // console.log(photo);
     let zPos = (showBack.hover || showBack.click)? 15: 5;
     let likeColor = (photo.liked_by_user)? 'red': 'white';
-    console.log(photo.liked_by_user);
+    // console.log(photo.liked_by_user);
     
     function clickLike (id) {
         if (photo.liked_by_user) {
@@ -19,6 +19,7 @@ function SelectedPhotoBack ({unsplash, numPhoto, listPhoto, showBack, size, clic
             unsplash.photos.unlikePhoto(id)
                 .then(toJson)
                 .then(json => {
+                    console.log(json);
                     console.log(json.photo);
                     setPhoto(json.photo)
                 })

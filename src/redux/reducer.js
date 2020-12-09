@@ -84,7 +84,6 @@ function reducer (state, action) {
         case 'SET_PHOTO':
             let list = state.listPhoto.map((item, index)=>{
                 if (index==state.selectedPhoto) {
-                    console.log(`совпал ${index}`);
                     let newItem = item;
                     newItem.liked_by_user = action.photo.liked_by_user;
                     return newItem
@@ -92,8 +91,6 @@ function reducer (state, action) {
                     return item
                 }
             })
-            console.log(state.listPhoto);
-            console.log(list);
             return {
                 ...state,
                 listPhoto: list
