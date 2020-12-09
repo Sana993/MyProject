@@ -10,8 +10,7 @@ module.exports = {
     entry: './src/index.jsx',
     output: {
         filename: '[name]_build.js',
-        path: path.resolve(__dirname, 'prod'),
-        publicPath: '/'
+        path: path.resolve(__dirname, 'prod')
     },
     devServer: {
         index: 'index_build.html',
